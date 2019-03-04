@@ -1,10 +1,15 @@
 const express = require('express'),
     bodyParser = require('body-parser'),
-    xhub = require('express-x-hub');
+    xhub = require('express-x-hub'),
+    cors = require('cors');
 
 
 const PORT = 3000;
 const app = express();
+/**
+ * enable cors
+ */
+app.use(cors());
 /**
  * app dashboard : APP_SECRET
  */
@@ -25,6 +30,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
+    console.log(`app is running on ${PORT}`)
     return res.status(200).json({
         code: 0,
         data: `app is running on ${PORT}`
