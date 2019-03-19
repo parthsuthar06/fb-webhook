@@ -39,9 +39,7 @@ app.get('/', (req, res) => {
 
 app.get(['/facebook', '/instagram'], (req, res) => {
     //validate xhub
-    console.log(req.isXHub)
     // const isXHubValid = req.isXHubValid();
-    // console.log('validate xhub',isXHubValid);
     // if (!isXHubValid) {
     //     console.log('Warning - request header X-Hub-Signature not present or invalid');
     //     res.sendStatus(401);
